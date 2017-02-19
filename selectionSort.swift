@@ -37,7 +37,7 @@ func descending<T: Comparable> (firstItem: T, secondItem: T) -> Bool {return fir
 func ascending<T: Comparable> (firstItem: T, secondItem: T) -> Bool {return firstItem < secondItem}
 
 // Set the size of the test array (and the upper bound of the random numbers to fill it: 1 to N)
-let N: UInt32 = 1000
+let N: UInt32 = 20
 
 // Initialize (and print) the test array
 var unsortedArray = (1...N).map{_ in Int(arc4random_uniform(N)+1)}
