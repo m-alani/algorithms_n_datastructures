@@ -3,7 +3,7 @@
 // Bubble Sort has the time complexity of O(n^2) in its worst case, so it is not recommended to be used at all.
 // The only advantage Bubble Sort has over most sort algorithms is its ability to detect an already sorted input, which would bring its time complexity down to O(n).
 //
-// The following optimized implementation of Bubble Sort sorts an array of randomly generated integers (of length N; default is 20), prints the total number of swaps and iterations, and prints the sorted array.
+// The following optimized implementation of Bubble Sort generates and prints an array of randomly generated integers (of length N; default is 20), prints the total number of swaps and iterations, and prints the sorted array.
 //
 // Marwan Alani - 2017
 
