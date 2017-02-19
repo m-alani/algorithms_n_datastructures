@@ -2,7 +2,7 @@
 //
 // Selection Sort has the time complexity of O(n^2), and it is not recommended to be used at all.
 //
-// The following implementation of Selection Sort generates and prints an array of randomly generated integers (of length N; default is 20), sorts the array, prints the total number of swaps, and prints the sorted array.
+// The following implementation of Selection Sort generates & prints an array of randomly generated integers (of length N; default is 20), sorts the array, prints the total number of comparisons & swaps, and prints the sorted array.
 //
 // Marwan Alani - 2017
 
@@ -12,6 +12,7 @@ import Foundation
 func selectionSort<T>(inputArray: [T], shouldSwap:(T,T) -> Bool) -> [T] {
     var outputArray = inputArray
     var swaps = 0
+    var comparisons = 0
     if outputArray.count > 1 {
         for mainIndex in 0...outputArray.count-2 {
             var swapIndex = mainIndex
@@ -19,6 +20,7 @@ func selectionSort<T>(inputArray: [T], shouldSwap:(T,T) -> Bool) -> [T] {
                 if shouldSwap(outputArray[subIndex], outputArray[swapIndex]) {
                     swapIndex = subIndex
                 }
+                comparisons += 1
             }
             if swapIndex != mainIndex {
                 swap(&outputArray[swapIndex], &outputArray[mainIndex])
@@ -26,7 +28,7 @@ func selectionSort<T>(inputArray: [T], shouldSwap:(T,T) -> Bool) -> [T] {
             }
         }
     }
-    print("Selection Sort completed after \(swaps) swap(s)")
+    print("Selection Sort completed after \(comparisons) comparison(s) and \(swaps) swap(s)")
     return outputArray
 }
 
@@ -35,7 +37,7 @@ func descending<T: Comparable> (firstItem: T, secondItem: T) -> Bool {return fir
 func ascending<T: Comparable> (firstItem: T, secondItem: T) -> Bool {return firstItem < secondItem}
 
 // Set the size of the test array (and the upper bound of the random numbers to fill it: 1 to N)
-let N: UInt32 = 20
+let N: UInt32 = 1000
 
 // Initialize (and print) the test array
 var unsortedArray = (1...N).map{_ in Int(arc4random_uniform(N)+1)}
