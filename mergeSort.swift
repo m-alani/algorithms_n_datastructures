@@ -1,6 +1,7 @@
-// Merge Sort (Top-Down, Recursive) implementation in Swift
+// Merge Sort (Top-Down, Recursive, with separate Arrays) implementation in Swift
 //
 // Merge Sort has the time complexity of O(n log n), and it is considered an efficient general purpose sort algorithm.
+// This implementation is great for explanatory uses, however, it has an added space complexity because of the Array duplication (n log n). Merge sort can be implemented without the use of separate Arrays/Lists in production code bases, that way it won't have a space complexity overhead, but it will definitely be harder to understand (code-wise)
 //
 // The following implementation of Merge Sort generates & prints an array of randomly generated integers (of length N; default is 20), sorts the array, and prints the sorted array.
 //

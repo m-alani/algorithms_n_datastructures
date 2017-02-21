@@ -1,6 +1,6 @@
 // Selection Sort implementation in Swift
 //
-// Selection Sort has the time complexity of O(n^2), and it is not recommended to be used at all.
+// Selection Sort has the time complexity of O(n^2), and it is not recommended to be used as there are more effecient sorting algorithms.
 //
 // The following implementation of Selection Sort generates & prints an array of randomly generated integers (of length N; default is 20), sorts the array, prints the total number of comparisons & swaps, and prints the sorted array.
 //
