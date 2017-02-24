@@ -1,5 +1,7 @@
 // Simple Stack implementation in Swift
 //
+// A Stack is a LIFO (Last In First Out) sequential data structure with the purpose of having an Insertion, Deletion, and Access (for the top element) with time complexity of N(1)
+// 
 // This file was also written to practice XCode's documentation standards, so feel free to refer to the comments for more details about the code
 //
 // Marwan Alani - 2017
