@@ -1,6 +1,6 @@
 // Linked List (Simple Singly) implementation in Swift
 //
-// This file was written to practice XCode's documentation standards, so feel free to refer to the comments for more details about the code
+// This file was also written to practice XCode's documentation standards, so feel free to refer to the comments for more details about the code
 //
 // Marwan Alani - 2017
 
