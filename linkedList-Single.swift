@@ -96,19 +96,6 @@ class LinkedList<T> {
         self.count += 1
     }
 
-    /// Removes the first node in the list and returns its value. If the list is empty, it returns a nil. O(1)
-    ///
-    /// - Returns: An optional T. The data of the removed node (if any), or nil otherwise
-    public func removeFirst() -> T? {
-        var removedValue: T? = nil
-        if (self.count != 0) {
-            removedValue = root?.data
-            self.root = self.root!.next
-            self.count -= 1
-        }
-        return removedValue
-    }
-
     /// Inserts a value at the end of the list. O(n)
     ///
     /// - Parameter data: The data value to be inserted
@@ -143,6 +130,19 @@ class LinkedList<T> {
         }
     }
 
+    /// Removes the first node in the list and returns its value. If the list is empty, it returns a nil. O(1)
+    ///
+    /// - Returns: An optional T. The data of the removed node (if any), or nil otherwise
+    public func removeFirst() -> T? {
+        var removedValue: T? = nil
+        if (self.count != 0) {
+            removedValue = root?.data
+            self.root = self.root!.next
+            self.count -= 1
+        }
+        return removedValue
+    }
+
     /// Removes the last node in the list and returns its value. If the list is empty, it returns a nil. O(n)
     ///
     /// - Returns: An optional T. The data of the removed node (if any), or nil otherwise
@@ -162,6 +162,32 @@ class LinkedList<T> {
             self.count -= 1
         }
         return removedValue
+    }
+
+    /// Returns the first data value in the list (if any). O(1)
+    ///
+    /// - Returns: The optional data value of the first node in the list. Returns nil if the list is empty
+    public func first() -> T? {
+        var value: T? = nil
+        if (self.count > 0) {
+            value = self.root?.data
+        }
+        return value
+    }
+
+    /// Returns the last data value in the list (if any). O(n)
+    ///
+    /// - Returns: The optional data value of the last node in the list. Returns nil if the list is empty
+    public func last() -> T? {
+        var value: T? = nil
+        if (self.count > 0) {
+            var currentNode = self.root
+            while (currentNode?.next != nil) {
+                currentNode = currentNode?.next
+            }
+            value = currentNode?.data
+        }
+        return value
     }
 
     /// Create an Array from the contents of the list. O(n)
@@ -201,8 +227,12 @@ print("Initial List with \(myList.count) item(s):")
 print(myList.toString(),"\n")
 
 // Use each remove function once
-print("Removeing the first element: \(myList.removeFirst())")
-print("Removeing the last element: \(myList.removeLast())\n")
+print("Removeing the first element: \(myList.removeFirst()!)")
+print("Removeing the last element: \(myList.removeLast()!)\n")
+
+// Use the "peek" functions (first & last)
+print("Peeking into the first element: \(myList.first()!)")
+print("Peeking into the last element: \(myList.last()!)\n")
 
 // Printing the list as an array
 print("The list as an array of \(myList.count) item(s):")
