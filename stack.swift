@@ -1,7 +1,7 @@
 // Simple Stack implementation in Swift
 //
 // A Stack is a LIFO (Last In First Out) sequential data structure with the purpose of having an Insertion, Deletion, and Access (for the top element) with time complexity of N(1)
-// 
+//
 // This file was also written to practice XCode's documentation standards, so feel free to refer to the comments for more details about the code
 //
 // Marwan Alani - 2017
@@ -37,7 +37,7 @@ class Node<T> {
 /// Generic Stack implementation
 class Stack<T> {
 
-    /// The top node of the list
+    /// The top node of the stack
     private var top: Node<T>?
 
     /// Default initializer with empty stack
@@ -82,7 +82,7 @@ class Stack<T> {
 
     /// Removes the top node in the stack and returns its value. If the stack is empty, it returns a nil. O(1)
     ///
-    /// - Returns: An optional T. The data of the removed node (if any), or nil otherwise
+    /// - Returns: An optional data value from the removed node (if any), or nil otherwise
     public func pop() -> T? {
         var removedValue: T? = nil
         if (self.top != nil) {
@@ -106,7 +106,7 @@ class Stack<T> {
 
     /// Create an Array from the contents of the stack. O(n)
     ///
-    /// - Returns: An array of type T containing the elements of the list in the same order
+    /// - Returns: An array of type T containing the elements of the stack in the same order
     public func toArray() -> [T] {
         var array = [T]()
         var currentNode = self.top
@@ -138,10 +138,15 @@ for _ in 1...N {
 print("Printing the Stack as an Array:")
 print(myStack.toArray(),"\n")
 
-// Remove the first 3 values
+// Remove the first 2 values, then add a random value
 print("Popping the top element: \(myStack.pop()!)")
 print("Popping the top element: \(myStack.pop()!)")
-print("Popping the top element: \(myStack.pop()!)\n")
+print("Pushing in a random number...\n")
+myStack.push(data: Int(arc4random_uniform(N)+1))
+
+// Print the stack as an Array again
+print("Printing the updated Stack as an Array:")
+print(myStack.toArray(),"\n")
 
 // Peek at the current top
 print("Peeking into the top element of the Stack: \(myStack.peek()!)\n")
