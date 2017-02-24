@@ -47,10 +47,12 @@ class LinkedList<T> {
     }
 
     /// Overloaded initializer to create a list with 1 node
+    /// Note that we're copying the data from the node first because it is passed by reference, and we want owenership over our nodes
     ///
     /// - Parameter root: Set the root of the list as the passed parameter
-    init(root r: Node<T>) {
-        self.root = r
+    init(root: Node<T>) {
+        let nodeCopy = Node(root.data)
+        self.root = nodeCopy
     }
 
     /// Create a string representation of the list
@@ -88,11 +90,13 @@ class LinkedList<T> {
     }
 
     /// Inserts a node at the beginning of the list. O(1)
+    /// Note that we're copying the data from the node first because it is passed by reference, and we want owenership over our nodes
     ///
     /// - Parameter node: The node to be inserted
     public func insertFirst(node: Node<T>) {
-        node.next = self.root
-        self.root = node
+        let nodeCopy = Node(data: node.data)
+        nodeCopy.next = self.root
+        self.root = nodeCopy
         self.count += 1
     }
 
@@ -114,18 +118,20 @@ class LinkedList<T> {
     }
 
     /// Inserts a node at the end of the list. O(n)
+    /// Note that we're copying the data from the node first because it is passed by reference, and we want owenership over our nodes
     ///
     /// - Parameter node: The node to be inserted
     public func insertLast(node: Node<T>) {
+        let nodeCopy = Node(data: node.data)
         if (self.count == 0) {
-            self.root = node
+            self.root = nodeCopy
             self.count += 1
         } else {
             var currentNode = self.root
             while (currentNode!.next != nil) {
                 currentNode = currentNode!.next
             }
-            currentNode!.next = node
+            currentNode!.next = nodeCopy
             self.count += 1
         }
     }
@@ -227,8 +233,8 @@ print("Initial List with \(myList.count) item(s):")
 print(myList.toString(),"\n")
 
 // Use each remove function once
-print("Removeing the first element: \(myList.removeFirst()!)")
-print("Removeing the last element: \(myList.removeLast()!)\n")
+print("Removing the first element: \(myList.removeFirst()!)")
+print("Removing the last element: \(myList.removeLast()!)\n")
 
 // Use the "peek" functions (first & last)
 print("Peeking into the first element: \(myList.first()!)")
