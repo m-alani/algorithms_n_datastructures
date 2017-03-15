@@ -3,7 +3,7 @@
 // Quick Sort has the average time complexity of O(n log n), and it is considered to be an efficient general purpose sort algorithm even though it has a worse case time complexity of (n^2).
 // This implementation is great for explanatory uses, however, it has an added space complexity because of the Array duplication (2n). Quick sort can be implemented without the use of separate Arrays/Lists in production code bases, that way it won't have a space complexity overhead, but it will need to mutate the original unsorted array to acheive a space complexity of (n)
 //
-// Note that this implementation of teh algorithm is using a fixed pivot (n/2). Closer performance to the average time complexity can be acheived by implementing some improved techniques for choosing the pivot
+// Note that this implementation of the algorithm is using a fixed pivot (n/2). Closer performance to the average time complexity can be acheived by implementing some improved techniques for choosing the pivot
 //
 // The following implementation of Quick Sort generates & prints an array of randomly generated integers (of length N; default is 20), copies the array, and prints the sorted copy of the array.
 //
