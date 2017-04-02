@@ -51,7 +51,7 @@ class LinkedList<T> {
     ///
     /// - Parameter root: Set the root of the list as the passed parameter
     init(root: Node<T>) {
-        let nodeCopy = Node(root.data)
+        let nodeCopy = Node(data: root.data)
         self.root = nodeCopy
     }
 
